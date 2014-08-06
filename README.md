@@ -1,4 +1,4 @@
 centreon
 ========
 
-Dockerized repo for Centron
+A dockerized repo for Centron
