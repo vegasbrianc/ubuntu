@@ -9,18 +9,15 @@ RUN apt-get --yes install apt-get install sudo tofrodos bsd-mailx lsb-release my
     rrdtool librrds-perl libconfig-inifiles-perl libcrypt-des-perl libdigest-hmac-perl \
     libdigest-sha-perl libgd-gd2-perl snmp snmpd libnet-snmp-perl libsnmp-perl
     
-RUN sudo sed -i '$a deb http://archive.ubuntu.com/ubuntu precise main multiverse' /etc/apt/sources.list
-RUN apt-get --yes update
-RUN apt-get install snmp-mibs-downloader
 
-ADD http://download.centreon.com/index.php?id=4314 /tmp/centreon.tar.gz
+ADD http://download.### /tmp/###.tar.gz
 
 
 RUN mkdir /opt/centreon
-RUN tar -zxvf /tmp/centreon.tar.gz -C /opt/centreon --strip-components=1
+RUN tar -zxvf /tmp/###.tar.gz -C /opt/###
 
-WORKDIR /opt/centreon/centreon-2.5.1
-RUN /opt/centreon/centreon/-2.5.1/install.sh -i
+WORKDIR /opt/###
+RUN /opt/###
 
 #ADD config_template.yaml /opt/uptime/config/config_template.yaml
 #RUN rm /opt/uptime/config/default.yaml
