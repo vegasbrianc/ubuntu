@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER Brian Christner <brian.christner@gmail.com>
-EXPOSE 8082
+EXPOSE 80
 
 RUN apt-get --yes update
 RUN apt-get --yes upgrade
@@ -19,8 +19,8 @@ ADD http://download.centreon.com/index.php?id=4314 /tmp/centreon.tar.gz
 RUN mkdir /opt/centreon
 RUN tar -zxvf /tmp/centreon.tar.gz -C /opt/centreon --strip-components=1
 
-WORKDIR /opt/centreon
-RUN /opt/centreon/install.sh -i
+WORKDIR /opt/centreon/centreon-2.5.1
+RUN /opt/centreon/centreon/-2.5.1/install.sh -i
 
 #ADD config_template.yaml /opt/uptime/config/config_template.yaml
 #RUN rm /opt/uptime/config/default.yaml
