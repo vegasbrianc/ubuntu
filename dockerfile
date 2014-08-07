@@ -8,6 +8,10 @@ RUN apt-get -qq install apt-get install sudo tofrodos bsd-mailx lsb-release mysq
     apache2 apache2-mpm-prefork php5 php5-mysql php-pear php5-ldap php5-snmp php5-gd \
     rrdtool librrds-perl libconfig-inifiles-perl libcrypt-des-perl libdigest-hmac-perl \
     libdigest-sha-perl libgd-gd2-perl snmp snmpd libnet-snmp-perl libsnmp-perl
+    
+RUN sudo sed -i '$a deb http://archive.ubuntu.com/ubuntu precise main multiverse' /etc/apt/sources.list
+RUN apt-get --yes update
+RUN apt-get install snmp-mibs-downloader
 
 ADD http://download.centreon.com/index.php?id=4314 /tmp/centreon.tar.gz
 
