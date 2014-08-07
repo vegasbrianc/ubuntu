@@ -16,7 +16,7 @@ RUN mkdir /opt/centreon
 RUN tar -zxvf /tmp/centreon.tar.gz -C /opt/centreon --strip-components=1
 
 WORKDIR /opt/centreon
-RUN /opt/centreon/install.sh
+RUN /opt/centreon/install.sh -i
 
 #ADD config_template.yaml /opt/uptime/config/config_template.yaml
 #RUN rm /opt/uptime/config/default.yaml
